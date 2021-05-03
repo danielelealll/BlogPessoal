@@ -39,7 +39,7 @@ public class TemaController {
 	
 	@GetMapping("/nome/{nome}") // método trazer por nome
 	public ResponseEntity<List<Tema>> getByName(@PathVariable String nome){
-		return ResponseEntity.ok(repository.findAllByDescricaoContaingingIgnoreCase(nome));
+		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
 	}
 	
 	@PostMapping
