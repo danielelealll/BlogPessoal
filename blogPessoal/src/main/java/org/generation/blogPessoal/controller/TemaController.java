@@ -42,20 +42,20 @@ public class TemaController {
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
 	}
 	
-	@PostMapping
+	@PostMapping // aplição de postagem por tema
 	public ResponseEntity<Tema> post (@RequestBody Tema tema){
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(repository.save(tema));
 		
 }
 
-	@PutMapping
+	@PutMapping // aplicação de put por tema
 	public ResponseEntity<Tema> put (@RequestBody Tema tema){
 		return ResponseEntity.ok(repository.save(tema));
 	
 }	
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/{id}") // aplicação de delete na api por id de identificação
 	public void delete(@PathVariable long id) {
 		repository.deleteById(id);
 	}
