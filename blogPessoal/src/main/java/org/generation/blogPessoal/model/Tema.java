@@ -25,7 +25,7 @@ public class Tema { // MODEL
 	@NotNull
 	private String descricao;
 	
-	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL) //1 para-muitos; mapeando o atributo "tema","Cascade".Este Cascadetype mostra que se algo for alterado e apagado, todas as postagens sofrerão alterações. Assim como se deletar, as postagens serão apagadas
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE) //1 para-muitos; mapeando o atributo "tema","Cascade".Este Cascadetype mostra que se algo for alterado e apagado, todas as postagens sofrerão alterações. Assim como se deletar, as postagens serão apagadas
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
 	

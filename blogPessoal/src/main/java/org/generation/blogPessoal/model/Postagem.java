@@ -41,6 +41,10 @@ public class Postagem {
 	private Tema tema;
 	// gerado por getters and setters
 	
+	@ManyToOne //Anotação de muitos eventos para uma categoria.
+	@JsonIgnoreProperties("postagem") // ignora as propriedades lógicas especificadas na serialização e desserialização JSON. É anotado no nível da classe.
+	private Usuario usuario;
+	
 
 	
 	public long getId() { // gerado por getters and setters
@@ -82,4 +86,14 @@ public class Postagem {
 	public void setTema(Tema tema) {
 		this.tema = tema;
 	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	
 }
